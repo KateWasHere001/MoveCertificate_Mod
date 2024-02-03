@@ -31,8 +31,6 @@ done
 # chmod 700 $MODPATH/certificates
 
 ui_print "[+]. Making user configs"
-USRCERTSDIR=/data/usr/cacerts
-mkdir -p ${USRCERTSDIR}
 
 if [ -d "/data/local/tmp/cacerts/" ]; then
 	cp -u /data/local/tmp/cacerts/* $MODDIR/cacerts/
