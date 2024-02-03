@@ -1,4 +1,4 @@
-# Move Certificates
+# Move Certificates MOD
 这是一个`Magisk/KernelSU`模块 用于移动用户证书到系统证书.支持`Android 7-14`
 如果手机是官方镜像,可能就需要借助`magisk`,如果是自己编译的直接`remount`手动移一下就行了.
 以下是参考链接:
@@ -10,7 +10,11 @@
 
 # 使用方法
 
-制作证书后推送到到手机指定目录，重启生效。以下是具体操作步骤：
+## Magisk\KernelSu管理器，安装本模块
+
+## 制作抓包证书文件并推送到手机指定目录
+
+以下是具体操作步骤：
 
 1. 制作证书（如：02e06844.0）
 ```shell
@@ -34,7 +38,7 @@ mkdir -p  /data/local/tmp/cacerts
 3. 推送证书
    `adb shell push 02e06844.0 /data/local/tmp/cacerts/`
 
-5. 重启手机
+4. 重启手机
    `adb shell reboot`
 
 # Misc
