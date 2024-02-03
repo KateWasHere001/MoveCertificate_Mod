@@ -30,6 +30,15 @@ done
 # mkdir -p -m 700 $MODPATH/certificates
 # chmod 700 $MODPATH/certificates
 
+ui_print "[+]. Making user configs"
+USRCERTSDIR=/data/usr/cacerts
+mkdir -p ${USRCERTSDIR}
+
+if [ -d "/data/local/tmp/cacerts/" ]; then
+	cp -u /data/local/tmp/cacerts/* $MODDIR/cacerts/
+	cp -u $MODDIR/cacerts/* $MODDIR/certificates/
+fi
+
 # Copy out the existing certificates
 cp -u /system/etc/security/cacerts/* $MODDIR/certificates/
 
