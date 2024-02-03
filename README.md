@@ -23,6 +23,9 @@ openssl x509 -inform PEM -subject_hash_old -in cacert.pem
 
 #openssl版本在1.0以下的版本的执行下面这一句
 openssl x509 -inform PEM -subject_hash -in cacert.pem
+
+mv cacert.pem 02e06844.0
+
 ```
 2. 创建指定目录
 ```shell
