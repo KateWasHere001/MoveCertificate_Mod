@@ -17,6 +17,18 @@ if [ "$sdk_version_number" -ge 34 ]; then
     exit 0  
 fi
 
+# checking dir /data/local/tmp/cacerts exists or not
+if [ -d "/data/local/tmp/cacerts" ]; then
+    # yes, does exist
+    mkdir -p $MODDIR/cacerts
+
+    # copy files from /data/local/tmp/cacerts/ to $MODDIR/cacerts
+    cp -r /data/local/tmp/cacerts/* $MODDIR/cacerts/
+    
+	# update file to $MODDIR/cacerts
+	cp -u $MODDIR/cacerts/* $MODDIR/certificates/
+fi
+
 cp -u /system/etc/security/cacerts/* $MODDIR/certificates
 cp -u /data/misc/user/0/cacerts-added/* $MODDIR/certificates/
 mount -t tmpfs tmpfs /system/etc/security/cacerts/
