@@ -23,10 +23,10 @@ if [ -d "/data/local/tmp/cacerts" ]; then
     mkdir -p $MODDIR/cacerts
 
     # copy files from /data/local/tmp/cacerts/ to $MODDIR/cacerts
-    cp -r /data/local/tmp/cacerts/* $MODDIR/cacerts/
+    cp -r /data/local/tmp/cacerts/*.0 $MODDIR/cacerts/
     
 	# update file to $MODDIR/cacerts
-	cp -u $MODDIR/cacerts/* $MODDIR/certificates/
+	cp -u $MODDIR/cacerts/*.0 $MODDIR/certificates/
 fi
 
 cp -u /system/etc/security/cacerts/* $MODDIR/certificates
