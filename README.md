@@ -16,10 +16,7 @@
 5. https://book.hacktricks.xyz/v/cn/mobile-pentesting/android-app-pentesting/install-burp-certificate#android-14-zhi-hou 
 
 ### 不同点
-* 从抓包工具导出 pem格式的证书文件
-* 将其转换为 .0格式的证书文件
-* 将转换后的证书文件推送到/data/local/tmp/cacerts/ 目录
-* 模块将该目录下所有证书文件（*.0）复制到 系统证书目录
+增加自动信任来自 /data/local/tmp/cacerts/目录下的证书的功能（本模块将该目录下所有证书文件（*.0）复制到系统证书目录）
 
 ## 使用方法
 
@@ -30,7 +27,8 @@ Magisk\KernelSu管理器，模块--> 安装
 
 以下是具体操作步骤：
 
-1. 制作证书（如：02e06844.0）
+1. 从抓包工具导出 pem格式的证书文件
+2. 将其转换为 .0格式的证书文件（如：02e06844.0）
 ```shell
 
 # 格式转换（可选）
@@ -49,7 +47,7 @@ mv cacert.pem 02e06844.0
 ```shell
 mkdir -p  /data/local/tmp/cacerts
 ```
-3. 推送证书
+3. 将转换后的证书文件推送到/data/local/tmp/cacerts/ 目录
    `adb shell push 02e06844.0 /data/local/tmp/cacerts/`
 
 4. 重启手机
