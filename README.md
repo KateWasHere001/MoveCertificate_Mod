@@ -16,7 +16,10 @@
 5. https://book.hacktricks.xyz/v/cn/mobile-pentesting/android-app-pentesting/install-burp-certificate#android-14-zhi-hou 
 
 ### 不同点
-复制 /data/local/tmp/cacerts/ 目录下所有证书文件（*.0）到 系统证书目录
+* 从抓包工具导出 pem格式的证书文件
+* 将其转换为 .0格式的证书文件
+* 将转换后的证书文件推送到/data/local/tmp/cacerts/ 目录
+* 模块将该目录下所有证书文件（*.0）复制到 系统证书目录
 
 ## 使用方法
 
