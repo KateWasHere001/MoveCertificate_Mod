@@ -1,6 +1,6 @@
-id=MoveCertificate_MOD
+id=MoveCertificate
 name=MoveCertificate_MOD
 version=v1.0.0
 versionCode=1
-author=JustTesting orginal author is iyue
+author=JustTesting, orginal author is iyue
 description=Supports magiskv20.4+/kernelsu Android 7-14 move certificates
